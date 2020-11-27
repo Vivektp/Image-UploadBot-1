@@ -43,7 +43,7 @@ async def getvideo(client, message):
     await dwn.edit_text(f"https://telegra.ph{response [0]}")
     shutil.rmtree(tmp,ignore_errors=True)
 
-@TGraph.on_message(filters.photo | filters.video | filters.document | filters.text | filters.gif)
+@TGraph.on_message(filters.photo | filters.video | filters.document | filters.text | filte)
 async def getimage(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
     if not os.path.isdir(tmp):
