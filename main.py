@@ -27,16 +27,16 @@ async def help(client, message):
 async def about(client, message):
      await message.reply_text(f"<b>🎇 My Name : MeG Telegraph Bot \n\n📝 Language : <a href='https://www.python.org/'>Python3</a>\n\n💞 Developer : @StarkXT8\n\n📢 Channel : @MeGBots\n\n🆘 Support : @MeGBotsChat \n\n♻️ Powered By : @Discovery_Mirror_Channel</b>", True)             
 
-@TGraph.on_message(filters.command("morebots")) 
+@TGraph.on_message(filters.command("more")) 
 async def about(client, message):
-    await message.reply_text(f"<b>Need List Of Our Bots..??</b>\n\nThen 👉🏻<a href='https://t.me/MeGBots/29'>Click Here</a></b>
+    await message.reply_text(f"<b>For Moere Join Our Channel 👉🏻 @MeGBots</b>\n\nSee Our Projects List👉🏻 <a href='https://t.me/MeGBots/29'>At Here</a></b>", True)
 @TGraph.on_message(filters.video)
 async def getvideo(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
     if not os.path.isdir(tmp):
         os.makedirs(tmp)
     imgdir = tmp + "/" + str(message.message_id) +".mp4"
-    dwn = await message.reply_text("Downloading Please Wait...🤗", True)          
+    dwn = await message.reply_text("", True)          
     await client.download_media(
             message=message,
             file_name=imgdir
