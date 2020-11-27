@@ -23,8 +23,19 @@ async def start(client, message):
 async def help(client, message):
     await message.reply_text(f"<b> 💁 Hey Its Not Tough To Ise Me...!!!\n\n Just Follow These Steps\n\n ▪️ Send Me Any Image (or) GIF (or) MP4 Below 5MB \n ▪️ Wait For To Generate Link For U\n\n 🌟 Powered By @MeGBots || @MeGLeech</b>", True)
                              
+@TGraph.on_message(filters.video)
+async def getvideo(client, message):
+    tmp = os.path.join("downloads",str(message.chat.id))
+    if not os.path.isdir(tmp):
+        os.makedirs(tmp)
+    imgdir = tmp + "/" + str(message.message_id) +".jpg"
+    dwn = await message.reply_text("Downloading Please Wait...🤗", True)          
+    await client.download_media(
+            message=message,
+            file_name=imgdir
 
-@TGraph.on_message(filters.photo | filters.video | filters.document | filters.text)
+         )
+@TGraph.on_message(filters.photo | filters.video | filters.document | filters.text | filters.gif)
 async def getimage(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
     if not os.path.isdir(tmp):
