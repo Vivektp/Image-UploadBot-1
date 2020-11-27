@@ -28,7 +28,7 @@ async def getvideo(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
     if not os.path.isdir(tmp):
         os.makedirs(tmp)
-    imgdir = tmp + "/" + str(message.message_id) +".jpg"
+    imgdir = tmp + "/" + str(message.message_id) +".mp4"
     dwn = await message.reply_text("Downloading Please Wait...🤗", True)          
     await client.download_media(
             message=message,
