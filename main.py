@@ -22,7 +22,10 @@ async def start(client, message):
 @TGraph.on_message(filters.command("help"))
 async def help(client, message):
     await message.reply_text(f"<b> 💁 Hey Its Not Tough To Ise Me...!!!\n\n Just Follow These Steps\n\n ▪️ Send Me Any Image (or) GIF (or) MP4 Below 5MB \n ▪️ Wait For To Generate Link For U\n\n 🌟 Powered By @MeGBots || @MeGLeech</b>", True)
-                             
+  
+@TGraph.on_message(filters.command("about")]
+async def about(client,message):
+     await message.reply_text(f"<b>🎇 My Name : MeG Telegraph Bot \n\n📝 Language : <a href='https://www.python.org/'>Python3</a>\n\n💞 Developer : @StarkXT8\n\n📢 Channel : @MeGBots\n\n🆘 Support : @MeGBotsChat \n\n♻️ Powered By : @Discovery_Mirror_Channel</b>", True)             
 @TGraph.on_message(filters.video)
 async def getvideo(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
@@ -43,7 +46,7 @@ async def getvideo(client, message):
     await dwn.edit_text(f"https://telegra.ph{response [0]}")
     shutil.rmtree(tmp,ignore_errors=True)
 
-@TGraph.on_message(filters.photo | filters.video | filters.document | filters.text | filte)
+@TGraph.on_message(filters.photo)
 async def getimage(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
     if not os.path.isdir(tmp):
