@@ -18,7 +18,12 @@ TGraph = Client(
 @TGraph.on_message(filters.command("start"))
 async def start(client, message):
     await message.reply_text(f"<b>Hello {message.from_user.first_name}, My Name Is MeG Telegraph Bot 🥳\n\nI'm A <u>Telegraph Uploader Bot.</u>\n\nSend Me Any <u>Image</u>& I'll Upload It To Telegra.ph & Send You Back A Link\n\n🙂 Join & Support Us Via 👉 @MeGLeech.\n\n 🌟 Powered By @MeGBots</b>", True)
-    
+ 
+@TGraph.on_message(filters.command("help"))
+async def help(client, message):
+    await message.reply_text(f"<b> 💁 Hey Its Not Tough To Ise Me...!!!\n\n Just Follow These Steps\n\n ▪️ Send Me Any Image (or) GIF (or) MP4 Below 5MB \n ▪️ Wait For To Generate Link For U\n\n 🌟 Powered By @MeGBots || @MeGLeech</b>", True)
+                             
+
 @TGraph.on_message(filters.photo)
 async def getimage(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
