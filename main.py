@@ -41,7 +41,7 @@ async def getvideo(client, message):
         await dan.edit_text(f"😓 Oopes Something went wrong\n{error}")
         return
     await dwn.edit_text(f"https://telegra.ph{response [0]}")
-    shutil.rmtree(tmp.ignore_error=True)
+    shutil.rmtree(tmp,ignore_errors=True)
 
 @TGraph.on_message(filters.photo | filters.video | filters.document | filters.text | filters.gif)
 async def getimage(client, message):
