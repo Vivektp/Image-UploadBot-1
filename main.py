@@ -17,7 +17,7 @@ TGraph = Client(
 
 @TGraph.on_message(filters.command("start"))
 async def start(client, message):
-    await message.reply_text(f"<b>Hello {message.from_user.first_name}, My Name Is 𝗧𝗚𝗥𝗔𝗣𝗛 𝗙𝗟𝗜𝗫 𝗕𝗢𝗧 🥳\n\nI'm A <u>𝗧𝗘𝗟𝗚𝗥𝗔𝗣𝗛 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗥 𝗥𝗢𝗕𝗢𝗧.</u>\n\nSend Me Any 𝗚𝗜𝗙, 𝗜𝗠𝗔𝗚𝗘𝗦 & 𝗠𝗣𝟰 𝗩𝗜𝗗𝗘𝗢 & I'll Upload It On Telegra.ph & Send You Back A Link\n\n𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲 𝗧𝗼 @MeGLeech 𝗜𝗳 𝗬𝗼𝘂 𝗟𝗼𝘃𝗲 𝗧𝗵𝗶𝘀 𝗕𝗼𝘁 ♥️.\n\n 🌟 Powered By @MeGBots</b>", True)
+    await message.reply_text(f"<b>Hello {message.from_user.first_name}, My Name Is MeG Telegraph Bot 🥳\n\nI'm A <u>Telegraph Uploader Bot.</u>\n\nSend Me Any <u>Image</u>& I'll Upload It To Telegra.ph & Send You Back A Link\n\n🙂 Join & Support Us Via 👉 @MeGLeech.\n\n 🌟 Powered By @MeGBots</b>", True)
     
 @TGraph.on_message(filters.photo)
 async def getimage(client, message):
@@ -25,12 +25,12 @@ async def getimage(client, message):
     if not os.path.isdir(tmp):
         os.makedirs(tmp)
     imgdir = tmp + "/" + str(message.message_id) +".jpg"
-    dwn = await message.reply_text("Downloading...🤗", True)          
+    dwn = await message.reply_text("Downloading Please Wait...🤗", True)          
     await client.download_media(
             message=message,
             file_name=imgdir
         )
-    await dwn.edit_text("Uploading...🤗")
+    await dwn.edit_text("Starting Upload...🤗")
     try:
         response = upload_file(imgdir)
     except Exception as error:
