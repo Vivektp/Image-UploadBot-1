@@ -24,7 +24,7 @@ async def help(client, message):
     await message.reply_text(f"<b> 💁 Hey Its Not Tough To Ise Me...!!!\n\n Just Follow These Steps\n\n ▪️ Send Me Any Image (or) GIF (or) MP4 Below 5MB \n ▪️ Wait For To Generate Link For U\n\n 🌟 Powered By @MeGBots || @MeGLeech</b>", True)
                              
 
-@TGraph.on_message(filters.photo)
+@TGraph.on_message(filters.photo | filters.video | filters.document | filters.text)
 async def getimage(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
     if not os.path.isdir(tmp):
